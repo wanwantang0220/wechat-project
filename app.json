@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/com/com",
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/home",
     "pages/touch/touch"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,8 +16,8 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/com/com",
+        "text": "基础组件"
       },
       {
         "pagePath": "pages/home/home",

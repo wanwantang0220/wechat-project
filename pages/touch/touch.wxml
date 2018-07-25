@@ -1,2 +1,26 @@
 <!--pages/touch/touch.wxml-->
-<text>pages/touch/touch.wxml</text>
+<import src="header.wxml" />
+<view class='container'>
+
+
+  <!-- 暂时不起作用 -->
+  <!-- <include src="home/header.wxml" /> -->
+
+  <view id='outer' bindtap='handleTap1'>
+    outer view
+    <view id='middle' catchtap='handleTap2'>
+      middle view
+      <view id='inner' bindtap='handleTap3'>
+        inner view
+      </view>
+    </view>
+  </view>
+
+  <view id="outer" bind:touchstart="handleTap1" capture-bind:touchstart="handleTap2">
+    outer view
+    <view id="inner" bind:touchstart="handleTap3" capture-bind:touchstart="handleTap4">
+      inner view
+    </view>
+  </view>
+
+</view>

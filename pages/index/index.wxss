@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import "../../lib/weui.wxss";
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,3 +21,13 @@
 .usermotto {
   margin-top: 200px;
 }
+
+
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.flex-wrp {display: flex;}
+.bc_green {background: green;width:100px; height: 100px;}
+.bc_red {background: red;width:100px; height: 100px;}
+.bc_blue {background: blue;width:100px; height: 100px;}
