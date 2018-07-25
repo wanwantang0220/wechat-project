@@ -1,0 +1,13 @@
+/* pages/home/home.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mytemp {
+ align-items: center;
+ color: #EE7785;
+ font-size: 60
+ 
+}

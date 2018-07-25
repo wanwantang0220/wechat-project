@@ -1,0 +1,81 @@
+<!--pages/home/home.wxml-->
+<import src="mytemp.wxml" />
+<view class="container">
+
+
+
+
+<view>
+<text class='mytemp'>test</text>
+</view>
+
+
+
+  <view>
+    <template is="msgItem" data="{{...item}}" />
+
+    <block wx:for="{{[1,2,3,4]}}">
+      <template is="{{item % 2 == 0 ? 'even' : 'odd'}}" />
+    </block>
+  </view>
+
+  <view>
+    <view wx:if="{{length >5}}">1</view>
+    <view wx:else="{{length >2}}">2</view>
+    <!-- <view wx:else>3</view> -->
+  </view>
+
+  <view>
+    <block wx:if="{{true}}">
+      <view>view1</view>
+      <view>view2</view>
+    </block>
+  </view>
+
+  <view>
+    <switch wx:for="{{objectArray}}" wx:key="unique" style='display: block;'>
+      {{item.id}}
+    </switch>
+    <button bindtap='switch'>Switch</button>
+    <button bindtap='addToFront'> Add to the front</button>
+    <button bindtap='addNumToFront'>Add to the num front</button>
+    <switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+
+  </view>
+
+
+
+
+
+  <view>Hello {{name}}</view>
+  <button bindtap='changeName'>Click me!</button>
+  <view id='item-{{id}}'></view>
+  <view wx:if="{{condition}}"></view>
+  <!-- <view>
+    <checkbox checked='{{false}'></checkbox>
+  </view>
+  -->
+  <view wx:for="{{array}}">
+    {{index}}:{{item.message}}
+  </view>
+  <!-- <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+    <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+      <view wx:if="{{i <= j}}">
+        {{i}} * {{j}} = {{i * j}}
+      </view>
+    </view>
+  </view> -->
+  <block wx:for="{{[1, 2, 3]}}">
+    <view> {{index}}:{{item}} </view>
+  </block>
+  <view class="userinfo">
+    <button bindtap='first'>第一个小程序</button>
+    <button bindtap='second'>第二个小程序</button>
+    <button bindtap='third'>第三个小程序</button>
+    <text>{{show}}</text>
+    <text></text>
+  </view>
+
+
+
+</view>

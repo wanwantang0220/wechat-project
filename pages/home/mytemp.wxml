@@ -1,0 +1,21 @@
+<!--
+  index: int
+  msg: string
+  time: string
+-->
+@import "/pages/home/home.wxss";
+
+<template name="msgItem">
+  <view>
+    <text> {{index}}: {{msg}} \n</text>
+    <text> Time: {{time}} </text>
+  </view>
+</template>
+
+<template name="odd" >
+  <text class='mytemp'> hello </text>
+</template>
+
+<template name="even">
+  <view> world </view>
+</template>
