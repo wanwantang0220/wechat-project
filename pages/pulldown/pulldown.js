@@ -3,7 +3,7 @@ var util = require('../../utils/pulldown.js')
 Page({
 
   data: {
-    searchKeyword: '', //需要搜索的字符
+    // searchKeyword: '', //需要搜索的字符
     searchResultList: [], //放置返回数据的数组
     isFromSearch: true, // 用于判断searchSongList数组是不是空数组，默认true，空的数组
     searchPageNum: 1, // 设置加载的第几次，默认是第一次
@@ -12,9 +12,34 @@ Page({
     searchLoadingComplete: false //“没有数据”的变量，默认false，隐藏
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      searchPageNum: 1, //第一次加载，设置1
+      searchSongList: [], //放置返回数据的数组,设为空
+      isFromSearch: true, //第一次加载，设置true
+      searchLoading: true, //把"上拉加载"的变量设为true，显示
+      searchLoadingComplete: false //把“没有数据”设为false，隐藏
+    })
+    // 显示导航栏loading
+    wx.showNavigationBarLoading();
+    // 调用接口加载数据
+    this.fetchSearchList();
+    // 隐藏导航栏loading
+    wx.hideNavigationBarLoading();
+  },
 
   // 下拉刷新
   onPullDownRefresh: function() {
+    this.setData({
+      searchPageNum: 1, //第一次加载，设置1
+      searchSongList: [], //放置返回数据的数组,设为空
+      isFromSearch: true, //第一次加载，设置true
+      searchLoading: true, //把"上拉加载"的变量设为true，显示
+      searchLoadingComplete: false //把“没有数据”设为false，隐藏
+    })
     // 显示导航栏loading
     wx.showNavigationBarLoading();
     // 调用接口加载数据
@@ -37,13 +62,13 @@ Page({
     }
   },
 
-  //输入框事件，每输入一个字符，就会触发一次
-  bindKeywordInput: function(e) {
-    console.log("输入框事件")
-    this.setData({
-      searchKeyword: e.detail.value
-    })
-  },
+  // //输入框事件，每输入一个字符，就会触发一次
+  // bindKeywordInput: function(e) {
+  //   console.log("输入框事件")
+  //   this.setData({
+  //     searchKeyword: e.detail.value
+  //   })
+  // },
 
   //搜索，访问网络
   fetchSearchList: function() {
@@ -52,7 +77,7 @@ Page({
       searchPageNum = that.data.searchPageNum, //把第几次加载次数作为参数
       callbackcount = that.data.callbackcount; //返回数据的个数
     //访问网络
-    util.getSearchMusic(searchKeyword, searchPageNum, callbackcount, function(data) {
+    util.getSearch(searchKeyword, searchPageNum, callbackcount, function(data) {
       console.log(data)
       //判断是否有数据，有则取数据
       if (data.d.length != 0) {
@@ -76,17 +101,17 @@ Page({
     })
 
   },
-  //点击搜索按钮，触发事件
-  keywordSearch: function(e) {
-    this.setData({
-      searchPageNum: 1, //第一次加载，设置1
-      searchSongList: [], //放置返回数据的数组,设为空
-      isFromSearch: true, //第一次加载，设置true
-      searchLoading: true, //把"上拉加载"的变量设为true，显示
-      searchLoadingComplete: false //把“没有数据”设为false，隐藏
-    })
-    this.fetchSearchList();
-  },
+  // //点击搜索按钮，触发事件
+  // keywordSearch: function(e) {
+  //   this.setData({
+  //     searchPageNum: 1, //第一次加载，设置1
+  //     searchSongList: [], //放置返回数据的数组,设为空
+  //     isFromSearch: true, //第一次加载，设置true
+  //     searchLoading: true, //把"上拉加载"的变量设为true，显示
+  //     searchLoadingComplete: false //把“没有数据”设为false，隐藏
+  //   })
+  //   this.fetchSearchList();
+  // },
   //滚动到底部触发事件
   searchScrollLower: function() {
     let that = this;

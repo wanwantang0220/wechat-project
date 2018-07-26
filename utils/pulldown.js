@@ -1,4 +1,4 @@
-function getSearchMusic(keyword, pageindex, callbackcount, callback) {
+function getSearch(keyword, pageindex, callbackcount, callback) {
   wx.request({
     url: 'https://xiaoce-timeline-api-ms.juejin.im/v1/getListByLastTime?pageNum=' + pageindex,
     data: [],
@@ -15,5 +15,5 @@ function getSearchMusic(keyword, pageindex, callbackcount, callback) {
 }
 
 module.exports = {
-  getSearchMusic: getSearchMusic
+  getSearch: getSearch
 }
