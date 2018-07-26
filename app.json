@@ -4,8 +4,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/home",
-    "pages/touch/touch"
-    
+    "pages/touch/touch",
+    "pages/pickview/pickview"
   ],
   "window": {
     "backgroundTextStyle": "light",
