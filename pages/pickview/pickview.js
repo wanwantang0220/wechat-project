@@ -3,8 +3,11 @@ const date = new Date()
 const years = []
 const months = []
 const days = []
+const curyear = date.getFullYear();
+const fullyears = date.getFullYear() + 20;
+const cha = curyear-1990;
 
-for (let i = 1990; i <= date.getFullYear(); i++) {
+for (let i = 1990; i <= fullyears; i++) {
   years.push(i)
 }
 
@@ -24,15 +27,16 @@ Page({
    */
   data: {
     years: years,
-    year: date.getFullYear(),
+    year: curyear,
     months: months,
     month: 2,
     days: days,
     day: 2,
-    value: [9999, 1, 1],
+    value: [cha, 1, 1],
   },
   bindChange: function(e) {
-    const val = e.detail.value
+    const val = e.detail.value;
+    console.log('val=' + val);
     this.setData({
       year: this.data.years[val[0]],
       month: this.data.months[val[1]],

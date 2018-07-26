@@ -1,0 +1,6 @@
+/* pages/media/media.wxss */
+.section__ctn{
+    text-align: center;
+    margin-top: 20;
+    margin-bottom: 20;
+}
