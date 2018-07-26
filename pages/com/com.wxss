@@ -1,21 +1,88 @@
 /* pages/com/com.wxss */
+@import "../../lib/weui.wxss";
+
+.page-section {
+  margin-bottom: 20rpx;
+}
+
 .intro {
   margin: 30px;
   text-align: center;
 }
 
-
-.margin{
+.margin {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 /** wxss **/
+
 /** 修改button默认的点击态样式类**/
+
 .button-hover {
   background-color: red;
 }
+
 /** 添加自定义button点击态样式类**/
+
 .other-button-hover {
   background-color: blue;
+}
+
+.label-1,  {
+  margin-bottom: 15px;
+}
+
+.label-2 {
+  margin-bottom: 15px;
+}
+
+.label-1__text, .label-2__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.label-1_icon {
+  position: relative;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  background: #fcfff4;
+}
+
+.label_icon-checked {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: #1aad19;
+}
+
+.label-2__icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  background: #fcfff4;
+  border-radius: 50px;
+}
+
+.label-2__icon-checked {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  background: #1aad19;
+  border-radius: 50%;
+}
+
+.label-4_text {
+  text-align: center;
+  margin-top: 15px;
 }
