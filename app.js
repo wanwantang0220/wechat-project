@@ -35,6 +35,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    okayapiHost:"https://xiaoce-timeline-api-ms.juejin.im"
   }
 })

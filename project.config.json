@@ -4,17 +4,20 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.2.1",
 	"appid": "wxa3d9eb50a9493026",
 	"projectname": "DemoProject",
 	"isGameTourist": false,
+	"service": {
+		"request": "https://xiaoce-timeline-api-ms.juejin.im"
+	},
 	"condition": {
 		"search": {
 			"current": -1,

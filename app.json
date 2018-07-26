@@ -6,13 +6,15 @@
     "pages/home/home",
     "pages/touch/touch",
     "pages/pickview/pickview",
-    "pages/media/media"
+    "pages/media/media",
+    "pages/pulldown/pulldown"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [
@@ -27,6 +29,10 @@
       {
         "pagePath": "pages/media/media",
         "text": "多媒体"
+      },
+      {
+        "pagePath": "pages/pulldown/pulldown",
+        "text": "刷新加载更多"
       }
     ]
   },
