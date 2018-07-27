@@ -47,6 +47,7 @@ Page({
         }
       }
       //获取手指触摸的是哪一项
+      console.log("e.target.dataset = " + e.target.dataset);
       var index = e.target.dataset.index;
       var list = this.data.list;
       if (index >= 0) {
