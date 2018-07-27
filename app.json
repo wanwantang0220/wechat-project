@@ -7,7 +7,8 @@
     "pages/touch/touch",
     "pages/pickview/pickview",
     "pages/media/media",
-    "pages/pulldown/pulldown"
+    "pages/pulldown/pulldown",
+    "pages/demo/demo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,6 +34,10 @@
       {
         "pagePath": "pages/pulldown/pulldown",
         "text": "刷新加载更多"
+      },
+      {
+        "pagePath": "pages/demo/demo",
+        "text": "滑动删除"
       }
     ]
   },
