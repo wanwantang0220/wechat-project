@@ -78,7 +78,6 @@ Page({
       callbackcount = that.data.callbackcount; //返回数据的个数
     //访问网络
     util.getSearch(searchKeyword, searchPageNum, callbackcount, function(data) {
-      console.log(data)
       //判断是否有数据，有则取数据
       if (data.d.length != 0) {
         let searchList = [];

@@ -1,4 +1,6 @@
 // pages/demo/demo.js
+var util = require('../../utils/pulldown.js')
+
 Page({
   data: {
     delBtnWidth: 180 //删除按钮宽度单位（rpx）
@@ -114,69 +116,37 @@ Page({
       list: list
     });
   },
-  //测试临时数据
+  
+  //获取数据
   tempData: function() {
-    var list = [{
-        txtStyle: "",
-        icon: "/images/icon0.png",
-        txt: "向左滑动可以删除"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon6.png",
-        txt: "微信小程序|联盟（wxapp-union.com）"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon1.png",
-        txt: "圣诞老人是爸爸，顺着烟囱往下爬，礼物塞满圣诞袜，平安糖果一大把"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon2.png",
-        txt: "圣诞到来，元旦还会远吗？在圣诞这个日子里"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon3.png",
-        txt: "圣诞节(Christmas或Cristo Messa ),译名为“基督弥撒”。"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon4.png",
-        txt: "一年一度的圣诞节即将到来,姑娘们也纷纷开始跑趴了吧!"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon5.png",
-        txt: "圣诞节(Christmas或Cristo Messa ),译名为“基督弥撒”。"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon2.png",
-        txt: "你的圣诞节礼物准备好了吗?"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon3.png",
-        txt: "一年一度的圣诞节即将到来,姑娘们也纷纷开始跑趴了吧!"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon4.png",
-        txt: "圣诞到来，元旦还会远吗？"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon5.png",
-        txt: "记下这一刻的心情"
-      },
+    let that = this;
+    let searchKeyword = '', //输入框字符串作为参数
+      searchPageNum = 1, //把第几次加载次数作为参数
+      callbackcount = 20; //返回数据的个数
+    var mlist = [];
+    //访问网络
+    util.getSearch(searchKeyword, searchPageNum, callbackcount, function(data) {
+      const length = data.d.length;
+      for (let i = 0; i < length; i++) {
+        console.log('i = ' + data.d[i].title);
+        let info = {
+          title: data.d[i].title,
+          desc: data.d[i].desc,
+          profile: data.d[i].profile,
+          img: data.d[i].img,
+          txtStyle: "",
+        }
+        
+        mlist.push(info);
+      }
 
-    ];
-
-    this.setData({
-      list: list
+      that.setData({
+        list: mlist
+      });
+      console.log("list = " + that.data.list);
     });
+
+   
   }
 
 })
